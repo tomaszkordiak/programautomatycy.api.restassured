@@ -38,7 +38,7 @@ public class ServiceHelper {
                 .post(endpoint);
     }
 
-    public void sendPostRequest(String body, String endpoint) {
+    public Response sendPostRequest(String body, String endpoint) {
         SAMPLE_REST.response = given()
                 .auth()
                 .preemptive()
@@ -46,7 +46,11 @@ public class ServiceHelper {
                 .contentType(ContentType.JSON)
                 .body(body)
                 .baseUri(BASE_URI)
-                .post(endpoint);
+                .post(endpoint)
+                .then()
+                .extract().response();
+
+        return SAMPLE_REST.response;
     }
 
     public Response sendGetRequest(String endpoint) {
@@ -54,6 +58,21 @@ public class ServiceHelper {
                 .auth()
                 .preemptive()
                 .basic(LOGIN, PASSWORD)
+                .baseUri(BASE_URI)
+                .get(endpoint)
+                .then()
+                .extract().response();
+
+        return SAMPLE_REST.response;
+    }
+
+    public Response sendGetRequest(String body, String endpoint) {
+        SAMPLE_REST.response = given()
+                .auth()
+                .preemptive()
+                .basic(LOGIN, PASSWORD)
+                .contentType(ContentType.JSON)
+                .body(body)
                 .baseUri(BASE_URI)
                 .get(endpoint)
                 .then()
