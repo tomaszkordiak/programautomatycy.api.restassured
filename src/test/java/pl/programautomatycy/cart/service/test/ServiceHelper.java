@@ -80,6 +80,64 @@ public class ServiceHelper {
 
         return SAMPLE_REST.response;
     }
+
+    public Response sendDeleteRequest(String endpoint) {
+        SAMPLE_REST.response = given()
+                .auth()
+                .preemptive()
+                .basic(LOGIN, PASSWORD)
+                .baseUri(BASE_URI)
+                .delete(endpoint)
+                .then()
+                .extract().response();
+
+        return SAMPLE_REST.response;
+    }
+
+    public Response sendDeleteRequest(String body, String endpoint) {
+        SAMPLE_REST.response = given()
+                .auth()
+                .preemptive()
+                .basic(LOGIN, PASSWORD)
+                .contentType(ContentType.JSON)
+                .body(body)
+                .baseUri(BASE_URI)
+                .delete(endpoint)
+                .then()
+                .extract().response();
+
+        return SAMPLE_REST.response;
+    }
+
+    public Response sendPutRequest(String body, String endpoint) {
+        SAMPLE_REST.response = given()
+                .auth()
+                .preemptive()
+                .basic(LOGIN, PASSWORD)
+                .contentType(ContentType.JSON)
+                .body(body)
+                .baseUri(BASE_URI)
+                .put(endpoint)
+                .then()
+                .extract().response();
+
+        return SAMPLE_REST.response;
+    }
+
+    public Response sendPatchRequest(String body, String endpoint) {
+        SAMPLE_REST.response = given()
+                .auth()
+                .preemptive()
+                .basic(LOGIN, PASSWORD)
+                .contentType(ContentType.JSON)
+                .body(body)
+                .baseUri(BASE_URI)
+                .patch(endpoint)
+                .then()
+                .extract().response();
+
+        return SAMPLE_REST.response;
+    }
 }
 
 class SampleRest {
