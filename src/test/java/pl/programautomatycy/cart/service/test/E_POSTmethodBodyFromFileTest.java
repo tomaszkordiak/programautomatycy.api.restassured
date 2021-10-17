@@ -5,7 +5,7 @@ import net.minidev.json.JSONObject;
 import utils.JsonBodyRequestHelper;
 import org.junit.Test;
 
-public class E_POSTmethodBodyFromFile {
+public class E_POSTmethodBodyFromFileTest {
 
     private final ServiceHelper serviceHelper = new ServiceHelper();
 

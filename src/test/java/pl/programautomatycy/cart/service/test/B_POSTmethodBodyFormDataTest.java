@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import java.util.HashMap;
 import java.util.Map;
 
-public class B_POSTmethodBodyFormData {
+public class B_POSTmethodBodyFormDataTest {
 
     private final ServiceHelper serviceHelper = new ServiceHelper();
 

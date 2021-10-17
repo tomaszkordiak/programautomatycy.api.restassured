@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import java.util.Map;
 
-public class F_GETmethod {
+public class F_GETmethodTest {
 
     private final ServiceHelper serviceHelper = new ServiceHelper();
 

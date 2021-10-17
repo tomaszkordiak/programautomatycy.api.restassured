@@ -4,7 +4,7 @@ import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.Test;
 
-public class D_POSTmethodBodyJSONobject {
+public class D_POSTmethodBodyJSONobjectTest {
 
     private final ServiceHelper serviceHelper = new ServiceHelper();
 

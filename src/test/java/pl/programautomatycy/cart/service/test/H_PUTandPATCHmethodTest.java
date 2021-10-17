@@ -4,7 +4,7 @@ import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.Test;
 
-public class H_PUTandPATCHmethod {
+public class H_PUTandPATCHmethodTest {
 
     ServiceHelper serviceHelper = new ServiceHelper();
 

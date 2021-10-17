@@ -4,7 +4,7 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
-public class C_POSTmethodBodyString {
+public class C_POSTmethodBodyStringTest {
 
     private final ServiceHelper serviceHelper = new ServiceHelper();
 

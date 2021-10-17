@@ -3,7 +3,7 @@ package pl.programautomatycy.cart.service.test;
 import io.restassured.response.Response;
 import org.junit.Test;
 
-public class G_DELETEmethod {
+public class G_DELETEmethodTest {
 
     ServiceHelper serviceHelper = new ServiceHelper();
 
