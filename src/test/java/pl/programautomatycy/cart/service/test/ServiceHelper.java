@@ -3,6 +3,7 @@ import static io.restassured.RestAssured.*;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import pl.programautomatycy.cart.service.test.serialising.AddItemToCartRequestPOJO;
 import utils.GetPropertyValues;
 
 import java.util.Map;
@@ -133,6 +134,21 @@ public class ServiceHelper {
                 .body(body)
                 .baseUri(BASE_URI)
                 .patch(endpoint)
+                .then()
+                .extract().response();
+
+        return SAMPLE_REST.response;
+    }
+
+    public Response sendPostRequest(AddItemToCartRequestPOJO body, String endpoint) {
+        SAMPLE_REST.response = given()
+                .auth()
+                .preemptive()
+                .basic(LOGIN, PASSWORD)
+                .contentType(ContentType.JSON)
+                .body(body)
+                .baseUri(BASE_URI)
+                .post(endpoint)
                 .then()
                 .extract().response();
 
